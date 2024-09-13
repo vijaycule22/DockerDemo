@@ -1,13 +1,15 @@
-// Import the Express module
+
 const express = require('express');
+const cors = require('cors');
 
-// Create an Express application
+
 const app = express();
+app.use(cors());
 
-// Define the port
+
 const PORT = process.env.PORT || 3000;
 
-// Define a route for the root URL (/)
+
 app.get('/', (req, res) => {
   res.send('Hello, World! This is my Node.js app yess.');
 });
@@ -15,7 +17,7 @@ app.get('/health', (req, res) => {
   res.send('Hi, everything is OK HERE!');
 });
 
-// return list of all users
+
 app.get('/users', (req, res) => {
   res.json([
     {
